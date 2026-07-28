@@ -1,0 +1,22 @@
+# Auto detect text files and normalize line endings to LF
+* text=auto
+
+# Java files
+*.java text eol=lf
+*.class binary
+*.jar binary
+
+# XML files
+*.xml text eol=lf
+*.pom text eol=lf
+
+# Markdown files
+*.md text eol=lf
+
+# JSON files
+*.json text eol=lf
+
+# Git files
+.git* text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
