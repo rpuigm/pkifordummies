@@ -1,0 +1,29 @@
+{
+  "name": "pkifordummies",
+
+  "image": "mcr.microsoft.com/devcontainers/base:debian-13",
+
+  "containerEnv": {
+    "DEBIAN_FRONTEND": "noninteractive",
+    "MAVEN_VERSION": "3.9.14"
+  },
+
+  "onCreateCommand": "sudo apt-get update && sudo apt-get install -y --no-install-recommends bash curl git unzip ca-certificates openjdk-21-jdk neovim ripgrep fd-find tree xclip less build-essential && sudo curl -fsSL https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz | sudo tar -xz -C /opt && sudo ln -sf /opt/apache-maven-${MAVEN_VERSION}/bin/mvn /usr/bin/mvn",
+
+  "postStartCommand": "sudo mkdir -p /workspace && sudo chown vscode:vscode /workspace",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "redhat.java",
+        "vscjava.vscode-maven",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  },
+
+  "remoteUser": "vscode"
+}
